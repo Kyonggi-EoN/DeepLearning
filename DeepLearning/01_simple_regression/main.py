@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from HyperParam import HyperParam as hp
 from tqdm import tqdm
 
-from ref_model import SimpleModel as RegressionModel
+from ref_model import ComplexModel as RegressionModel
 
 # Simple dataset
 # y = 3x + 2
@@ -49,7 +49,7 @@ def train(model, x_train, y_train, epochs=hp.epochs):
 
             # 시각화
             ax.cla()
-            ax.scatter(x_train.numpy(), y_train.numpy(), color='blue', label='Real Data', s=100)
+            ax.scatter(x_train.numpy(), y_train.numpy(), color='blue', label='Real Data', s=20)
             ax.plot(x_train.numpy(), pred.detach().numpy(), color='red', lw=3, label='Model Prediction')
             ax.set_title(f'Training Epoch: {epoch}', fontsize=15)
             ax.set_xlabel('x')
@@ -76,8 +76,8 @@ def generate_data(n_samples=1000):
         return x, y
 
 if __name__ == "__main__":
-    # Level 1: 직선 학습
     '''
+    # Level 1: 직선 학습
     print("--- Starting Level 1: Linear Regression ---")
     model = RegressionModel(1, 1)
     train(model, x_train, y_train, 10000)
@@ -92,14 +92,14 @@ if __name__ == "__main__":
     y10 = pred[1].item()  # x=10 일 때의 y값
 
     # 기울기(a) 계산: (y2 - y1) / (x2 - x1)
-    slope = (y10 - y0) / (5.0 - 1.0)
+    slope = (y10 - y0) / (5.0 - 0.0)
     bias = y0
 
     print(f"최종 산출식: y = {slope:.4f}x + {bias:.4f}")
-    
     '''
+
     # Level 2: 곡선 학습 (Challenge)
     print("\n--- Starting Level 2: Challenges ---")
     model = RegressionModel(1, 1)
     x_hard, y_hard = generate_data(n_samples=1000)
-    train(model, x_hard, y_hard)
+    train(model, x_hard, y_hard, 100000)
