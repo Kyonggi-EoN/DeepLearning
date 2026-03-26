@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from HyperParam import HyperParam as hp
 from tqdm import tqdm
 
-from models.miracle import Miracle as RegressionModel
+from ref_model import LinearModel as RegressionModel
 
 # Simple dataset
 # y = 3x + 2

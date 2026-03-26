@@ -11,7 +11,9 @@ from tqdm import tqdm
 # from {file_name} import {model name} as RegressionModel
 
 # example
-from models.UltarPower import UltraPower as RegressionModel
+# from models.UltarPower import UltraPower as RegressionModel
+
+from models.damin import SimpleModel as RegressionModel
 
 def train(model, x_train, y_train, epochs=hp.epochs):
     model_name = model.__class__.__name__

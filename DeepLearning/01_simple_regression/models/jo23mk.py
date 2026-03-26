@@ -1,8 +1,8 @@
 import torch.nn as nn
 
-class UltraPower(nn.Module):
+class jo23mk(nn.Module):
     def __init__(self, in_feature, out_feature):
-        super(UltraPower, self).__init__()
+        super(jo23mk, self).__init__()
 
         self.l1 = nn.Linear(in_feature, 16) 
         self.relu1 = nn.ReLU()
