@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local
+.claude/
+docs/
+
+## if uot want to download data, you can execute the task python file of data you want
+data/
